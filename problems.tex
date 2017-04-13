@@ -288,7 +288,7 @@
 \question
   Design a Turing machine to recognise the language $\{ ww^R \mid w \in \{ 0,1 \}^* \}$ where $w^R$ is $w$ reversed.
   For example, when $w = 101011$ then $w^R = 110101$.
-\begin{solution}
+  \begin{solution}
     \begin{table}[H]
       \centering
       \begin{tabular}{ccccc}
@@ -325,10 +325,34 @@
   \end{solution}
 
 
-
 \question
   Design a Turing machine to recognise the language $\{ a^ib^jc^k | i,j,k \in \mathbb{N}_0 \}$
-
+  \begin{solution}
+    \begin{table}[H]
+      \centering
+      \begin{tabular}{ccccc}
+        \toprule
+            State & Input & Write & Move & Next \\
+        \midrule
+            $q_0$ & $\sqcup$ & $\sqcup$ & R & $q_a$ \\
+            $q_0$ & $a$      & $a$      & R & $q_0$ \\
+            $q_0$ & $b$      & $b$      & R & $q_1$ \\
+            $q_0$ & $c$      & $c$      & R & $q_2$ \\
+        \midrule
+            $q_0$ & $\sqcup$ & $\sqcup$ & R & $q_a$ \\
+            $q_0$ & $a$      & $a$      & R & $q_f$ \\
+            $q_0$ & $b$      & $b$      & R & $q_1$ \\
+            $q_0$ & $c$      & $c$      & R & $q_2$ \\
+        \midrule
+            $q_0$ & $\sqcup$ & $\sqcup$ & R & $q_a$ \\
+            $q_0$ & $a$      & $a$      & R & $q_f$ \\
+            $q_0$ & $b$      & $b$      & R & $q_f$ \\
+            $q_0$ & $c$      & $c$      & R & $q_2$ \\
+        \bottomrule
+        \hline
+      \end{tabular}
+    \end{table}
+  \end{solution}
 
 \end{questions}
 \bibliographystyle{plain}
